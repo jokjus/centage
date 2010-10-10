@@ -1,0 +1,19 @@
+-------------
+What is this?
+-------------
+Centage! is my five cents in defining a good fluid css framework. 
+Every framework has its shortcomings – as has Centage! too – 
+but it also solves some major issues in existing ones. 
+
+The most important benefits of Centage! are:
+1) Easy to setup to whatever column/gutter combination.
+2) Nested grids that _preserve gutter width_.
+3) Full page area is usable (no obligatory horizontal paddings).
+4) Subgrids with differing column count inside a page.
+5) Right side of page is aligned despite of subpixel rendering problems of different browsers.
+
+-------
+Licence
+-------
+Released under General Public Licence:
+http://www.gnu.org/licenses/gpl.html

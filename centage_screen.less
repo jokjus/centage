@@ -1,0 +1,231 @@
+/* @group General styles */
+
+
+/*STRUCTURE*/
+
+/*standard font size */
+@font:1em;
+
+@fontpx:12; /*standard font size in pixels, needed for calculations*/
+@fontpxem:12em; /*this is needed for calculations*/
+
+/*standard line height */
+@line:1.5em;
+
+@linepx:18; /*standard line height in pixels, please */
+@linepxem:18em; /*needed for calculations*/ 
+@leading:@line - @fontsize; /*the true leading = line height - font size*/
+
+/*root grid division*/
+/* IMPORTANT !!! This is where you define the number of columns in your layout */
+@grid:13;
+
+/*space between columns*/
+@gut:1.5%;
+
+
+
+/* THANK YOU, THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
+/* ------------------------------------------------------------------- */
+/*space between columns inside columns, used as padding value*/
+@sub4_gut:(100 / (4 * @col1_gut + (3 * @gut))) * @gut;
+
+/* gutterless column width */
+@col1:100% / @grid;
+
+/* column width when gutters are used */
+@col1_gut:(100% - @gut * (@grid - 1)) / @grid;
+
+/*column + gutter */
+@col1_plus_gut:@col1_gut + @gut;
+
+/* -------------------------------------------------------------------- */
+
+
+/* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
+.mod{
+	float:left;
+	overflow:hidden;}
+
+/*root level column*/
+.col(@col_count:1, @padd_v:0, @padd_h:0) {
+	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
+	.mod; 
+	margin-right:@gut;
+	padding-top:@padd_v;
+	padding-bottom:@padd_v;
+	padding-left:@padd_h;
+	padding-right:@padd_h;}
+
+.col_pad(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
+	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - @pad_left - @pad_right;/* for IE */
+	.mod; 
+	margin-right:@gut;
+	padding-top:@pad_top;
+	padding-bottom:@pad_bottom;
+	padding-left:@pad_left;
+	padding-right:@pad_right;
+	}
+
+/*column inside parent container element */
+.sub_col(@parent_cols:1, @sub_cols:1, @pad_v:0, @pad_h:0){
+	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - (@pad_h * 2%));
+	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - (@pad_h * 2%);/* for IE */
+	.mod;
+	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
+	padding-top:@pad_v;
+	padding-bottom:@pad_v;
+	padding-left:@pad_h;
+	padding-right:@pad_h;
+	}
+
+/*column inside parent container element */
+.sub_col_pad(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
+	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - @pad_left - @pad_right);/* for IE */	
+	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - @pad_left - @pad_right;
+	.mod;
+	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
+	padding-top:@pad_top;
+	padding-bottom:@pad_bottom;
+	padding-left:@pad_left;
+	padding-right:@pad_right;
+	}
+
+.margin-left(@margin_cols:1){
+	margin-left:@col1_plus_gut * @margin_cols;}
+
+.margin-right(@margin_cols:1){
+	margin-right:@col1_plus_gut * @margin_cols;}
+
+.margin-top(@lines:1, @borders_to_compensate:0){
+	margin-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.margin-bottom(@lines:1, @borders_to_compensate:0){
+	margin-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.padding-top(@lines:1, @borders_to_compensate:0){
+	padding-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.padding-bottom(@lines:1, @borders_to_compensate:0){
+	padding-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.last {
+	margin-right:0 !important;
+	float:right;}
+
+
+
+/* @group reset */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline; }
+	
+table {
+	border-collapse:separate;
+	border-spacing:0; }
+
+a img {
+	border:none; }
+/* @end */
+
+
+/* @group body styles */
+
+body {font:75%/1.5 Arial, sans-serif;}
+
+/* @end */
+
+
+/* @group other */
+
+.clearfix:after {
+	content:"."; 
+	display: block; 
+	height: 0; 
+	clear:both; 
+	visibility: hidden
+	}
+
+/* @end */
+
+/* @end */
+
+
+/* @group Grid */
+/* This grid is only for development purposes, you can overlay it on top of page to check consistency */
+
+#grid_wrapper,
+#grid_no_gut_wrapper {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:100;
+	min-width:66em;
+	width:100%;
+	height:2500px;}
+	
+#grid {
+		max-width: 120em;
+		min-width: 66em;
+		margin:0 auto; 
+		overflow: hidden; 
+		@g:2*@gap;
+		padding:0 @g;
+		height:100%;
+		
+		.grid_col {
+			height:100%;
+			.col(1);
+			background:transparent url(img/grid_fluid.png) repeat-y 0 0;
+			position:relative;
+			}
+		
+		#grid_col13 {
+			margin-right:0;}			
+			
+		.right_grid_colborder {
+			position:absolute;
+			right:0;
+			height:100%;
+			background:transparent url(img/grid_fluid.png) repeat-y 0 0;
+			background-position-right:-1px;
+			width:1px;}
+	}
+
+#grid_no_gut {
+		max-width: 120em;
+		min-width: 66em;
+		margin:0 auto; 
+		overflow: hidden; 
+		@g:2*@gap;
+		padding:0 @g;
+		height:100%;
+	
+		.center {
+			height:100%;
+			width:@gut;
+			margin-left:@col1_gut;
+			float:left;
+			background:transparent url(img/grid_center.png) repeat-y 50% 0;
+			position:relative;}
+	}	
+
+
+/* IE FIX */
+#content{
+		max-width: 120em;
+		min-width: 66em;
+		margin:0 auto; 
+		overflow: hidden; 
+		@g:2*@gap;
+		padding:0 @g;
+	}
