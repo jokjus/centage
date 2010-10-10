@@ -24,7 +24,7 @@
 @fontpxem:12em; /*this is needed for calculations*/
 
 /*standard line height */
-@line:1.5;
+@line:1.5em;
 
 @linepx:18; /*standard line height in pixels, please. Calculate it like this: @fontpx * @line. */
 @linepxem:18em; /*needed for calculations*/ 
@@ -183,7 +183,7 @@ body {
 	left:0;
 	top:0;
 	z-index:100;
-	min-width:66em;
+	min-width:@min-width;
 	width:100%;
 	height:2500px;}
 	
@@ -198,7 +198,7 @@ body {
 			}
 		
 		#grid_col13 {
-			margin-right:0;}			
+			.last;}			
 			
 		.right_grid_colborder {
 			position:absolute;

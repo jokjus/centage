@@ -5,19 +5,33 @@
 @bg:#ccc;
 @bg_l:#eee;
 
+.h_navi {
+	margin:0;
+	list-style-type:none;
+	overflow:hidden;}
+
+.h_navi_li {
+	float:left;
+	width:auto;
+	display:block;}
+/* -------------------------- */
+
 
 #header {
 	overflow: hidden;
 	
 	#logo{
-		.col(3);}
+		.col(5);
+		height: 6*@line;
+		background: transparent url(img/centage_logo.png) no-repeat 0 50%;}
 	
 	#navi{
-		.col(10);
+		.col(8);
 		.last;
+		.h_navi;
 		
 		li {
-			.sub_col(10,2);}
+			.h_navi_li;}
 		}
 	}
 
