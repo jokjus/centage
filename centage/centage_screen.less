@@ -3,25 +3,34 @@
 
 /*STRUCTURE*/
 
-/*standard font size */
-@font:1em;
+/*page grid columns*/
+@grid:13;
 
+/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
+@gut:1.5%;
+
+
+/*page size*/
+@max-width:110em;
+@min-width:66em;
+
+
+/*typography, baseline grid*/
+
+@font:Arial, sans-serif;
+
+@bodyfont:75%; /*set the body font size in percentages*/
 @fontpx:12; /*standard font size in pixels, needed for calculations*/
 @fontpxem:12em; /*this is needed for calculations*/
 
 /*standard line height */
-@line:1.5em;
+@line:1.5;
 
-@linepx:18; /*standard line height in pixels, please */
+@linepx:18; /*standard line height in pixels, please. Calculate it like this: @fontpx * @line. */
 @linepxem:18em; /*needed for calculations*/ 
-@leading:@line - @fontsize; /*the true leading = line height - font size*/
+@leading:@line - @fontpxem; /*the true leading = line height - font size*/
 
-/*root grid division*/
-/* IMPORTANT !!! This is where you define the number of columns in your layout */
-@grid:13;
 
-/*space between columns*/
-@gut:1.5%;
 
 
 
@@ -118,6 +127,7 @@
 
 
 /* @group reset */
+/* You can use your preferred reset instead, this one is based on Blueprint CSS reset sheet */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	margin:0;
@@ -140,7 +150,11 @@ a img {
 
 /* @group body styles */
 
-body {font:75%/1.5 Arial, sans-serif;}
+
+body {
+	font-family: @font;
+	font-size: @bodyfont;
+	line-height: @line;}
 
 /* @end */
 
@@ -174,12 +188,6 @@ body {font:75%/1.5 Arial, sans-serif;}
 	height:2500px;}
 	
 #grid {
-		max-width: 120em;
-		min-width: 66em;
-		margin:0 auto; 
-		overflow: hidden; 
-		@g:2*@gap;
-		padding:0 @g;
 		height:100%;
 		
 		.grid_col {
@@ -202,12 +210,6 @@ body {font:75%/1.5 Arial, sans-serif;}
 	}
 
 #grid_no_gut {
-		max-width: 120em;
-		min-width: 66em;
-		margin:0 auto; 
-		overflow: hidden; 
-		@g:2*@gap;
-		padding:0 @g;
 		height:100%;
 	
 		.center {
@@ -218,14 +220,16 @@ body {font:75%/1.5 Arial, sans-serif;}
 			background:transparent url(img/grid_center.png) repeat-y 50% 0;
 			position:relative;}
 	}	
+/* @end */
 
 
-/* IE FIX */
-#content{
-		max-width: 120em;
-		min-width: 66em;
+#wrap,
+#grid,
+#grid_no_gut{
+		max-width: @max-width;
+		min-width: @min-width;
 		margin:0 auto; 
 		overflow: hidden; 
-		@g:2*@gap;
+		@g:2*@gut;
 		padding:0 @g;
 	}
