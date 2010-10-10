@@ -1,0 +1,61 @@
+@import '../centage/centage_screen.less';
+
+
+/* Some layout styles to test Centage! */
+@bg:#ccc;
+@bg_l:#eee;
+
+
+#header {
+	overflow: hidden;
+	
+	#logo{
+		.col(3);}
+	
+	#navi{
+		.col(10);
+		.last;
+		
+		li {
+			.sub_col(10,2);}
+		}
+	}
+
+#page {
+	overflow: hidden;
+	
+	#content{
+		.col(7);
+		
+		#banner{
+			padding:@line @gut;
+			.margin-bottom(2);
+			background-color: @bg;
+			text-align: center;}
+		
+		#captions{
+			.margin-bottom(2);
+			
+			.caption{
+				.sub_col(7,1.75);
+				background-color:@bg;}
+			}
+		}
+		
+	#sidebar{
+		.col(4);
+		.last;
+		.margin-left(2);
+		background-color: @bg_l;
+		
+		#user_images{
+			overflow: hidden;
+			
+			.user_image{
+				.sub_col(4,2);
+				height: 7*@line;
+				background-color: @bg;}			
+			}		
+		}
+}
+
