@@ -4,16 +4,19 @@
 /*STRUCTURE*/
 
 /*page grid columns*/
-@grid:13;
+@grid:12;
 
 /*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
 @gut:1.5%;
+@gut_int:1.5;
 
 
 /*page size*/
 @max-width:110em;
 @min-width:66em;
 
+@max-width_int:110;
+@min-width_int:66;
 
 /*typography, baseline grid*/
 
@@ -31,9 +34,6 @@
 @leading:@line - @fontpxem; /*the true leading = line height - font size*/
 
 
-
-
-
 /* THANK YOU, THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
 /* ------------------------------------------------------------------- */
 /*space between columns inside columns, used as padding value*/
@@ -47,6 +47,11 @@
 
 /*column + gutter */
 @col1_plus_gut:@col1_gut + @gut;
+
+@clip_amount:100 / (100 + @gut_int);
+
+@max:@max-width + (@max-width * (@gut_int/100));
+@min:@min-width + (@min-width * (@gut_int/100));
 
 /* -------------------------------------------------------------------- */
 
@@ -62,6 +67,17 @@
 	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
 	.mod; 
 	margin-right:@gut;
+	padding-top:@padd_v;
+	padding-bottom:@padd_v;
+	padding-left:@padd_h;
+	padding-right:@padd_h;}
+
+
+.col_clip(@col_count:1, @padd_v:0, @padd_h:0) {
+	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%)) * @clip_amount ;
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
+	.mod; 
+	margin-right:@gut * @clip_amount;
 	padding-top:@padd_v;
 	padding-bottom:@padd_v;
 	padding-left:@padd_h;

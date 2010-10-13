@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Centage - The Smart'n Fluid CSS Framework</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://lesscss.googlecode.com/files/less-1.0.35.min.js"></script>
+<script type="text/javascript" src="../centage/js/centage.js"></script>
+<script type="text/javascript" charset="utf-8">
+    less.env = "development";
+    less.watch();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+	$(window).resize(function(){
+		resizeCols('#co');
+	});
+</script>
+
+<style type="text/css">
+body {font: 75%/1.5 Arial;}
+.container {
+	max-width: 100em;
+	min-width: 60em;
+	background-color: green;
+	overflow: hidden;}
+
+.clipping {
+	max-width: 600px;
+	min-width: 400px;}
+
+.content {
+	width:9.0909%;
+/*	margin-right: 16.6666%;*/
+	background-color: gray;
+	height: 4em;
+	float: left;}
+	
+.odd {
+	background-color: maroon;}
+
+</style>
+
+
+</head>
+
+<body>
+
+	<div id="co" class="container">
+			<div class="content odd">test test</div>
+			<div class="content">test test</div>
+			<div class="content odd">test test</div>
+			<div class="content">test test</div>
+			<div class="content odd">test test</div>
+			<div class="content">test test</div>
+			<div class="content odd">test test</div>
+			<div class="content">test test</div>
+			<div class="content odd">test test</div>
+			<div class="content">test test</div>
+			<div class="content odd">test test</div>						
+	</div>
+	
+	<div id="test" style="height:100px; width:100px;"></div>
+
+
+
+</body>
+</html>

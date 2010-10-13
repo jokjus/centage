@@ -1,5 +1,83 @@
 /* at this stage this is identical to Fernando Trasviña's cool elastic */
 
+function resizeCols(container) {
+	var cache, i, column, columnPercentage, columnWidths, columnWidth, columnWidthTally, difference, 
+	    absDifference, positionDivision, increment, direction, margin;
+	
+	var columns = $(container +  '> div').size();
+
+	
+
+	columnPercentage = 100 / columns;
+	
+	column;
+	columnWidths     = [];
+	var  dd = $(container).find('div').eq(0);
+	margin 			 = Math.round(parseFloat(dd.css('margin-right')));
+	
+	var containerWidth= $(container).width()-1;
+	columnWidth      = Math.round((containerWidth * ( columnPercentage / 100 )) - margin);
+	columnWidthTally = columnWidth * columns;
+	
+	for(i = 0; i < columns; i++) {
+		columnWidths.push(columnWidth);
+	}
+	
+	
+//	alert(containerWidth + 'px' + columnWidthTally);
+	difference       = containerWidth - columnWidthTally;
+	absDifference    = Math.abs(difference);
+	positionDivision = columns / (absDifference + 1);
+	increment        = (difference > 0);
+	direction        = -1;
+	var k = 0;
+	
+	if(difference !== 0) {
+		for(i = 1; i <=(Math.abs(difference)); i++) {
+			if(direction == -1) {
+				k = columnWidths.length - Math.floor( positionDivision * Math.round(i/2) );
+			}
+			else {
+				k = Math.floor( positionDivision * Math.round(i/2) ) - 1;
+			}
+			
+			
+			if(increment) {
+				columnWidths[k] = columnWidth + 1;
+				}
+			else{
+				columnWidths[k] = columnWidth - 1;
+			}	
+			direction = direction * -1;
+			}	
+		
+	}
+
+
+var de = columns * margin
+var re = columnWidthTally + de;			
+	
+	
+	for (i=0; i<columns; i++) {
+		
+		var ge = $(container).find('div').eq(i);
+		$(ge).css({width : columnWidths[i] + 'px'});
+//		$(ge).html(columnWidths[i]);
+		$('#test').html(containerWidth + ' ' + columnWidthTally + ' ' + de + ' ' + re );
+	}
+	
+	//$('#co').css({width : containerWidth + 'px'});
+
+
+
+};
+
+
+
+
+
+
+
 /**
 Elastic CSS Framework JavaScript Runtime
 Released under the MIT, BSD, and GPL Licenses.

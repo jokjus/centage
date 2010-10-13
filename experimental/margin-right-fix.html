@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Centage - The Smart'n Fluid CSS Framework</title>
+
+<script src="http://lesscss.googlecode.com/files/less-1.0.35.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    less.env = "development";
+    less.watch();
+</script>
+
+<style type="text/css">
+.container {
+	max-width: 500px;
+	min-width: 300px;
+	border: 1px solid black;
+	overflow: hidden;}
+
+.clipping {
+	max-width: 600px;
+	min-width: 400px;}
+
+.test {width: 120%;
+height: 6em;
+float: left;}
+
+.content {
+	width:33.3333%;
+	margin-right: 16.6666%;
+	background-color: gray;
+	height: 4em;
+	float: left;}
+
+.content2 {
+	width:100px;
+	margin:0 auto;
+	background-color: gray;
+	height: 4em;
+	position: relative;}
+
+.last {margin-right: 0;}
+
+</style>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="clipping">
+		<div class="clip2">
+			<div class="content">test test</div>
+			<div class="content">test test</div>
+			<div class="test">phuuk</div>
+		</div>
+		</div>
+	</div>
+
+
+<!--
+	<div style="width:300px; margin-right:100px;">
+		<div style="margin-right:100px; height:100px; background-color:gray;"></div>
+	</div>
+
+	<div class="container">
+		<div class="content2"></div>
+		<div class="content2"></div>
+		<div class="content2"></div>
+	</div>
+-->
+
+
+</body>
+</html>
