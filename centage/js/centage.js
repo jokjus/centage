@@ -1,8 +1,8 @@
 /* at this stage this is identical to Fernando Trasviña's cool elastic */
 
-function resizeCols(container) {
+function resizeCols(container, marginWidthP) {
 	var cache, i, column, columnPercentage, columnWidths, columnWidth, columnWidthTally, difference, 
-	    absDifference, positionDivision, increment, direction, margin;
+	    absDifference, positionDivision, increment, direction, marginWidth;
 	
 	var columns = $(container +  '> div').size();
 
@@ -13,11 +13,17 @@ function resizeCols(container) {
 	column;
 	columnWidths     = [];
 	var  dd = $(container).find('div').eq(0);
-	margin 			 = Math.round(parseFloat(dd.css('margin-right')));
+	//marginWidth 	 = Math.round(parseFloat(dd.css('margin-right')));
+	//marginWidthP	= 1.47783;
 	
-	var containerWidth= $(container).width()-1;
-	columnWidth      = Math.round((containerWidth * ( columnPercentage / 100 )) - margin);
-	columnWidthTally = columnWidth * columns;
+	//alert(dd.css('marginRight'));
+	
+	var containerWidth= $(container).width();
+	marginWidth  	 = Math.round(containerWidth * (marginWidthP / 100));
+	columnWidth      = Math.round((containerWidth * ( columnPercentage / 100 )));
+	//marginWidth 	 = Math.round((containerWidth - (columns*columnWidth)) / columns);
+	columnWidth  	 = columnWidth - marginWidth; 
+	columnWidthTally = columnWidth * columns + marginWidth * columns;
 	
 	for(i = 0; i < columns; i++) {
 		columnWidths.push(columnWidth);
@@ -54,16 +60,18 @@ function resizeCols(container) {
 	}
 
 
-var de = columns * margin
+var de = columns * marginWidth;
 var re = columnWidthTally + de;			
 	
 	
 	for (i=0; i<columns; i++) {
 		
 		var ge = $(container).find('div').eq(i);
-		$(ge).css({width : columnWidths[i] + 'px'});
+		$(ge).css({width : columnWidths[i] + 'px', 'margin-right' : marginWidth});
+	//	$(ge).css({width : columnWidths[i] + 'px'});
+		$(container).find('div').last().css({'margin-right' : 0});
 //		$(ge).html(columnWidths[i]);
-		$('#test').html(containerWidth + ' ' + columnWidthTally + ' ' + de + ' ' + re );
+//		$('#test').html(containerWidth + ' ' + columnWidthTally + ' ' + difference + ' margin:' + marginWidth);
 	}
 	
 	//$('#co').css({width : containerWidth + 'px'});

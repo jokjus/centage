@@ -5,6 +5,12 @@ Centage! is my five cents in defining a good fluid css framework.
 Every framework has its shortcomings – as has Centage! too – 
 but it also solves some major issues in existing ones. 
 
+My requirements for a grid system are:
+1) It should work acceptably without javascript
+2) It should mimic print grids as accurately as possible
+3) It should add minimum extra markup
+
+
 The most important benefits of Centage! are:
 1) Easy to setup to whatever column/gutter combination.
 2) Nested grids that _preserve gutter width_.
