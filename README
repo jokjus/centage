@@ -6,9 +6,10 @@ Every framework has its shortcomings – as has Centage! too –
 but it also solves some major issues in existing ones. 
 
 My requirements for a grid system are:
-1) It should work acceptably without javascript
-2) It should mimic print grids as accurately as possible
-3) It should add minimum extra markup
+1) It should work acceptably without javascript.
+2) It should mimic print grids as accurately as possible.
+3) Proportions of columns and gutters should be visually equal at any width.
+3) It should add minimum extra markup.
 
 
 The most important benefits of Centage! are:
