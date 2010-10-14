@@ -9,7 +9,8 @@ My requirements for a grid system are:
 1) It should work acceptably without javascript.
 2) It should mimic print grids as accurately as possible.
 3) Proportions of columns and gutters should be visually equal at any width.
-3) It should add minimum extra markup.
+4) It should add minimum extra markup.
+5) No representational markup.
 
 
 The most important benefits of Centage! are:
