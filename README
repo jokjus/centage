@@ -12,6 +12,12 @@ My requirements for a grid system are:
 4) It should add minimum extra markup.
 5) No representational markup.
 
+How to get there:
+1) Put all presentational markup into CSS.
+2) Use LESS to enable more flexible, powerful and compact CSS.
+3) Only use javascript and CSS3 to beautify layout.
+4) When possible, use CSS standard naming, like "margin-left".
+5) Take full advantage of LESS calculation capabilities to deal with subgrids.
 
 The most important benefits of Centage! are:
 1) Easy to setup to whatever column/gutter combination.
