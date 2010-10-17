@@ -11,6 +11,8 @@ My requirements for a grid system are:
 3) Proportions of columns and gutters should be visually equal at any width.
 4) It should add minimum extra markup.
 5) No representational markup.
+6) Should work on most browsers after IE6. IE6 users can expect trouble anyway.
+7) Should have a low learning curve – utilize what you already know about CSS layouts and frameworks.
 
 How to get there:
 1) Put all presentational markup into CSS.
