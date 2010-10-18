@@ -17,6 +17,9 @@
     
     $(document).ready(function(){
     
+    $('#grid_wrapper').hide();
+    		$('#grid_no_gut_wrapper').hide();
+    
     	$('#grid_toggle').click(function(){
     		$('#grid_wrapper').toggle();
     		$('#grid_no_gut_wrapper').toggle();
@@ -24,19 +27,7 @@
     });
     
     
-	$(window).resize(function(){
-		resizeCols('#col12', 1.47783);
-		resizeCols('#col11', 1.47783);
-		resizeCols('#col10', 1.47783);
-		resizeCols('#col9', 1.47783);
-		resizeCols('#col8', 1.47783);
-		resizeCols('#col7', 1.47783);
-		resizeCols('#col6', 1.47783);
-		resizeCols('#col5', 1.47783);
-		resizeCols('#col4', 1.47783);
-		resizeCols('#col3', 1.47783);
-		resizeCols('#col2', 1.47783);												
-	});
+
 
 </script>
 
@@ -107,44 +98,68 @@
 				<div id="banner">
 					Big Header is B-I-G
 				</div>
-				<div id="captions">
+				<div id="captions" class="wrap">
 					<div class="caption">Caption 1</div>
 					<div class="caption">Caption 2</div>
 					<div class="caption">Caption 3</div>
-					<div class="caption last">Caption 4</div>
+					<div class="caption">Caption 4</div>
 				</div>
 			</div>
 			<div id="sidebar">
-				<div id="user_images">
+				<div id="user_images" class="wrap">
 					<div class="user_image">1</div>
-					<div class="user_image last">2</div>
+					<div class="user_image">2</div>
 					<div class="user_image">3</div>
-					<div class="user_image last">4</div>
+					<div class="user_image">4</div>
 				</div>		
 			</div>
+
+		<div id="rowtest" class="cols">
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+			<div class="unit"></div>
+		
+		</div>
 
 		
 		<div id="column_test">
 		<h2>Column test with uniform gutters</h2>
-				<div id="col2" class="test">
+				<div id="col2" class="test wrap">
 					<div></div>
 					<div></div>
 				</div>
 				
-				<div id="col3" class="test">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-				
-				<div id="col4" class="test">
-					<div></div>
+				<div id="col3" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
 				</div>
 				
-				<div id="col5" class="test">
+				<div id="col4" class="test wrap">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				
+				<div id="col5" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -152,7 +167,7 @@
 					<div></div> 
 				</div>
 				
-				<div id="col6" class="test">
+				<div id="col6" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -161,18 +176,7 @@
 					<div></div>
 				</div>
 				
-				<div id="col7" class="test">
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-				
-				<div id="col8" class="test">
-					<div></div>
+				<div id="col7" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -182,8 +186,7 @@
 					<div></div>
 				</div>
 				
-				<div id="col9" class="test">
-					<div></div>
+				<div id="col8" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -194,8 +197,7 @@
 					<div></div>
 				</div>
 				
-				<div id="col10" class="test">
-					<div></div>
+				<div id="col9" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -207,8 +209,7 @@
 					<div></div>
 				</div>
 				
-				<div id="col11" class="test">
-					<div></div>
+				<div id="col10" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -221,7 +222,21 @@
 					<div></div>
 				</div>
 				
-				<div id="col12" class="test">
+				<div id="col11" class="test wrap">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				
+				<div id="col12" class="test wrap">
 					<div></div>
 					<div></div>
 					<div></div>

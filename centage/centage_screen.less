@@ -45,6 +45,10 @@
 /* column width when gutters are used */
 @col1_gut:(100% - @gut * (@grid - 1)) / @grid;
 
+/* column width when gutters are used */
+@col1_gut_flow:(100% - @gut * @grid) / @grid;
+
+
 /*column + gutter */
 @col1_plus_gut:@col1_gut + @gut;
 
@@ -63,8 +67,8 @@
 
 /*root level column*/
 .col(@col_count:1, @padd_v:0, @padd_h:0) {
-	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
-	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
+	width:((@col1_gut_flow * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
+	*width:(@col1_gut_flow * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
 	.mod; 
 	margin-right:@gut;
 	padding-top:@padd_v;
@@ -72,16 +76,6 @@
 	padding-left:@padd_h;
 	padding-right:@padd_h;}
 
-
-.col_clip(@col_count:1, @padd_v:0, @padd_h:0) {
-	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%)) * @clip_amount ;
-	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
-	.mod; 
-	margin-right:@gut * @clip_amount;
-	padding-top:@padd_v;
-	padding-bottom:@padd_v;
-	padding-left:@padd_h;
-	padding-right:@padd_h;}
 
 .col_pad(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
 	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
@@ -96,10 +90,10 @@
 
 /*column inside parent container element */
 .sub_col(@parent_cols:1, @sub_cols:1, @pad_v:0, @pad_h:0){
-	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - (@pad_h * 2%));
-	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - (@pad_h * 2%);/* for IE */
+	width:((100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut_flow + (@sub_cols * @gut - @gut)) - (@pad_h * 2%));
+	*width:((100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut_flow + (@sub_cols * @gut - @gut))) - 0.1% - (@pad_h * 2%);/* for IE */
 	.mod;
-	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
+	margin-right:(100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * @gut;
 	padding-top:@pad_v;
 	padding-bottom:@pad_v;
 	padding-left:@pad_h;
@@ -140,7 +134,8 @@
 	margin-right:0 !important;
 	float:right;}
 
-
+.cols(@margin:@gut) {
+	margin-right:@gut * -1;}
 
 /* @group reset */
 /* You can use your preferred reset instead, this one is based on Blueprint CSS reset sheet */
