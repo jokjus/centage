@@ -4,11 +4,11 @@
 /*STRUCTURE*/
 
 /*page grid columns*/
-@grid:12;
+@grid:5;
 
 /*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
-@gut:1.5%;
-@gut_int:1.5;
+@gut:2.5%;
+@gut_int:1;
 
 
 /*page size*/
@@ -67,8 +67,8 @@
 
 /*root level column*/
 .col(@col_count:1, @padd_v:0, @padd_h:0) {
-	width:((@col1_gut_flow * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
-	*width:(@col1_gut_flow * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
+	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
 	.mod; 
 	margin-right:@gut;
 	padding-top:@padd_v;
