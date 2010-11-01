@@ -1,146 +1,28 @@
-/* @group General styles */
-
-
-/*STRUCTURE*/
-
-/*page grid columns*/
-@grid:5;
-
-/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
-@gut:2.5%;
-@gut_int:1;
-
-
-/*page size*/
-@max-width:110em;
-@min-width:66em;
-
-@max-width_int:110;
-@min-width_int:66;
-
-/*typography, baseline grid*/
-
-@font:Arial, sans-serif;
-
-@bodyfont:75%; /*set the body font size in percentages*/
-@fontpx:12; /*standard font size in pixels, needed for calculations*/
-@fontpxem:12em; /*this is needed for calculations*/
-
-/*standard line height */
-@line:1.5em;
-
-@linepx:18; /*standard line height in pixels, please. Calculate it like this: @fontpx * @line. */
-@linepxem:18em; /*needed for calculations*/ 
-@leading:@line - @fontpxem; /*the true leading = line height - font size*/
-
 
 /* THANK YOU, THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
 /* ------------------------------------------------------------------- */
-/*space between columns inside columns, used as padding value*/
-@sub4_gut:(100 / (4 * @col1_gut + (3 * @gut))) * @gut;
-
 /* gutterless column width */
 @col1:100% / @grid;
 
 /* column width when gutters are used */
 @col1_gut:(100% - @gut * (@grid - 1)) / @grid;
 
-/* column width when gutters are used */
-@col1_gut_flow:(100% - @gut * @grid) / @grid;
-
-
 /*column + gutter */
 @col1_plus_gut:@col1_gut + @gut;
 
-@clip_amount:100 / (100 + @gut_int);
-
-@max:@max-width + (@max-width * (@gut_int/100));
-@min:@min-width + (@min-width * (@gut_int/100));
+/*the true leading = line height - font size*/
+@leading:@line - @fontpxem; 
 
 /* -------------------------------------------------------------------- */
 
+@fontpxem:@fontpx * 1em; /*this is needed for calculations*/
+@linepxem:@linepx * 1em; /*this is needed for calculations*/
 
-/* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
-.mod{
-	float:left;
-	overflow:hidden;}
-
-/*root level column*/
-.col(@col_count:1, @padd_v:0, @padd_h:0) {
-	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - (@padd_h * 2%));
-	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - (@padd_h * 2%);/* for IE */
-	.mod; 
-	margin-right:@gut;
-	padding-top:@padd_v;
-	padding-bottom:@padd_v;
-	padding-left:@padd_h;
-	padding-right:@padd_h;}
-
-
-.col_pad(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
-	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
-	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - @pad_left - @pad_right;/* for IE */
-	.mod; 
-	margin-right:@gut;
-	padding-top:@pad_top;
-	padding-bottom:@pad_bottom;
-	padding-left:@pad_left;
-	padding-right:@pad_right;
-	}
-
-/*column inside parent container element */
-.sub_col(@parent_cols:1, @sub_cols:1, @pad_v:0, @pad_h:0){
-	width:((100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut_flow + (@sub_cols * @gut - @gut)) - (@pad_h * 2%));
-	*width:((100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut_flow + (@sub_cols * @gut - @gut))) - 0.1% - (@pad_h * 2%);/* for IE */
-	.mod;
-	margin-right:(100 / (@parent_cols * @col1_gut_flow + (@parent_cols * @gut - @gut))) * @gut;
-	padding-top:@pad_v;
-	padding-bottom:@pad_v;
-	padding-left:@pad_h;
-	padding-right:@pad_h;
-	}
-
-/*column inside parent container element */
-.sub_col_pad(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
-	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - @pad_left - @pad_right);/* for IE */	
-	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - @pad_left - @pad_right;
-	.mod;
-	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
-	padding-top:@pad_top;
-	padding-bottom:@pad_bottom;
-	padding-left:@pad_left;
-	padding-right:@pad_right;
-	}
-
-.margin-left(@margin_cols:1){
-	margin-left:@col1_plus_gut * @margin_cols;}
-
-.margin-right(@margin_cols:1){
-	margin-right:@col1_plus_gut * @margin_cols;}
-
-.margin-top(@lines:1, @borders_to_compensate:0){
-	margin-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
-
-.margin-bottom(@lines:1, @borders_to_compensate:0){
-	margin-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
-
-.padding-top(@lines:1, @borders_to_compensate:0){
-	padding-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
-
-.padding-bottom(@lines:1, @borders_to_compensate:0){
-	padding-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
-
-.last {
-	margin-right:0 !important;
-	float:right;}
-
-.cols(@margin:@gut) {
-	margin-right:@gut * -1;}
-
+/* -------------------------------------------------------------------- */
 /* @group reset */
 /* You can use your preferred reset instead, this one is based on Blueprint CSS reset sheet */
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, xmp {
 	margin:0;
 	padding:0;
 	border:0;
@@ -158,9 +40,7 @@ a img {
 	border:none; }
 /* @end */
 
-
 /* @group body styles */
-
 
 body {
 	font-family: @font;
@@ -168,6 +48,101 @@ body {
 	line-height: @line;}
 
 /* @end */
+
+
+/* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
+.mod{
+	float:left;
+	overflow:hidden;}
+	
+/*main level column */	
+.col(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
+	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - @pad_left - @pad_right;/* for IE */
+	.mod; 
+	margin-right:@gut;
+	padding-top:@pad_top;
+	padding-right:@pad_right;
+	padding-bottom:@pad_bottom;
+	padding-left:@pad_left;	
+	}
+
+/*column inside parent container element */
+.sub-col(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
+	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - @pad_left - @pad_right);/* for IE */	
+	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - @pad_left - @pad_right;
+	.mod;
+	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
+	padding-top:@pad_top;
+	padding-right:@pad_right;
+	padding-bottom:@pad_bottom;
+	padding-left:@pad_left;	
+	}
+
+
+/*column based on full width of page*/
+.col-full(@col_count:1, @padd_v:0, @padd_h:0) {
+	width:((@col1 * @col_count) - (@padd_h * 2%));
+	*width:(@col1 * @col_count) - 0.1% - (@padd_h * 2%);/* for IE */
+	.mod; 
+	padding-top:@padd_v;
+	padding-bottom:@padd_v;
+	padding-left:@padd_h;
+	padding-right:@padd_h;}
+
+/*columns without gutters*/
+.col-nogut(@col_count:1, @padd_v:0, @padd_h:0) {
+	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
+	width: @col-halfgut-width;
+	*width:	@col-halfgut-width - 0.1%;/* for IE */
+	.mod; 
+	padding-top:@padd_v;
+	padding-bottom:@padd_v;
+	padding-left:@padd_h;
+	padding-right:@padd_h;}
+
+/*columns without gutters, first and last of row*/
+.col-nogut-first-last(@col_count:1, @padd_v:0, @padd_h:0) {
+	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
+	width: @col-halfgut-width - (0.5 * @gut);
+	*width:	@col-halfgut-width - - (0.5 * @gut) - 0.1%;/* for IE */
+	.mod; 
+	padding-top:@padd_v;
+	padding-bottom:@padd_v;
+	padding-left:@padd_h;
+	padding-right:@padd_h;}
+
+/* helpers to add margins in full column widths */ 
+.margin-left(@margin_cols:1){
+	margin-left:@col1_plus_gut * @margin_cols;}
+
+.margin-right(@margin_cols:1){
+	margin-right:@col1_plus_gut * @margin_cols;}
+
+/* helpers to keep layout in basline grid despite of borders used */
+.margin-top(@lines:1, @borders_to_compensate:0){
+	margin-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.margin-bottom(@lines:1, @borders_to_compensate:0){
+	margin-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.padding-top(@lines:1, @borders_to_compensate:0){
+	padding-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+.padding-bottom(@lines:1, @borders_to_compensate:0){
+	padding-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+
+/* ------------------------------------------------------------------- */
+
+/* last element in row if used inside less */
+.last(@align:left) {
+	margin-right:0 !important;
+	float:@align !important;}
+
+/* if called straight from xhtml */
+.last {
+	margin-right: 0 !important;}
+
 
 
 /* @group other */
@@ -179,8 +154,6 @@ body {
 	clear:both; 
 	visibility: hidden
 	}
-
-/* @end */
 
 /* @end */
 
@@ -209,7 +182,7 @@ body {
 			}
 		
 		#grid_col13 {
-			.last;}			
+			.last(right);}			
 			
 		.right_grid_colborder {
 			position:absolute;
@@ -231,9 +204,16 @@ body {
 			background:transparent url(img/grid_center.png) repeat-y 50% 0;
 			position:relative;}
 	}	
+	
+#grid_toggle{
+	position:fixed;
+	z-index: 1000;
+	top:0;
+	right: 0;}
 /* @end */
 
 
+/* set the page dimensions */
 #wrap,
 #grid,
 #grid_no_gut{
@@ -241,6 +221,5 @@ body {
 		min-width: @min-width;
 		margin:0 auto; 
 		overflow: hidden; 
-		@g:2*@gut;
-		padding:0 @g;
+		padding:0 @page-padding;
 	}

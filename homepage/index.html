@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Centage – The Smart'n Fluid CSS Framework</title>
+
+<link rel="stylesheet/less" media="screen" href="homepage_screen.less" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://lesscss.googlecode.com/files/less-1.0.35.min.js"></script>
+<script type="text/javascript" src="../centage/js/centage.js"></script>
+<script type="text/javascript" charset="utf-8">
+    less.env = "development";
+    less.watch();
+</script>
+
+
+</head>
+
+<body>
+	
+<!-- GRID is meant just to preview underlying grid during development, remove it in production -->
+<div id="grid_wrapper">
+    <div id="grid">
+        <div id="grid_col1" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col2" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col3" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col4" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col5" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col6" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col7" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col8" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col9" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col10" class="grid_col"><div class="right_grid_colborder"></div></div>
+      <div id="grid_col11" class="grid_col"><div class="right_grid_colborder"></div></div>    
+      <div id="grid_col13" class="grid_col last"><div class="right_grid_colborder"></div></div>
+  </div>
+</div>
+<div id="grid_no_gut_wrapper">
+    <div id="grid_no_gut">
+        <div id="col_gutter_center_1" class="center first"></div>
+        <div id="col_gutter_center_2" class="center"></div>
+        <div id="col_gutter_center_3" class="center"></div>
+        <div id="col_gutter_center_4" class="center"></div>
+        <div id="col_gutter_center_5" class="center"></div>
+        <div id="col_gutter_center_6" class="center"></div>
+        <div id="col_gutter_center_7" class="center"></div>
+        <div id="col_gutter_center_8" class="center"></div>
+        <div id="col_gutter_center_9" class="center"></div>
+        <div id="col_gutter_center_10" class="center"></div>
+        <div id="col_gutter_center_11" class="center"></div>    
+    </div>
+</div>
+
+<div id="grid_toggle">
+	<input type="button" value="Toggle grid" id="grid_toggle" />
+</div>
+<!-- GRID end -->
+
+
+<div id="wrap">
+	<div id="banner">
+		<div id="logo"><a href="/">Centage!</a></div>
+		<h1>Fluid grids evolved</h1>
+		<p class="caption">Meet Centage!, the next gen fluid grid CSS framework.</p>
+		<p class="buttons"><a href="">Download</a> <a href="">Demo</a> 
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			<iframe src="http://www.facebook.com/plugins/like.php?href=www.centagecss.com&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+		
+		</p>
+	</div>
+	<div id="page">
+		<div id="content">
+			<ul id="features">
+				<li>
+					<strong>1</strong>
+					<h4>Pure fluidity</h4>
+					No pixel values, everything expands and shrinks according to browser width, remaining in visual balance.
+				</li>
+				<li>
+					<strong>2</strong>
+					<h4>Pure xhtml</h4>
+					Centage! adds nothing to your xhtml markup. It's end result is pure, robust css. Bye bye <em>"span-n last push-x"</em>...
+				</li>
+				<li>
+					<strong>3</strong>
+					<h4>Intelligence built-in</h4>
+					Centage! is based on <a href="http://github.com/cloudhead/less.js">less.js</a>, and takes full advantage of it's advanced features like mixins, variables and nesting.
+				</li>
+				<li>
+					<strong>4</strong>
+					<h4>Baseline grid 2.0</h4>
+					Baseline grid introduces visual rhytm into web grids, but is a pain to maintain. Now it's easy with predefined variables.
+				</li>
+			</ul>
+			
+			<div class="section" id="what">
+				<h2>What and why?</h2>
+				<p>Centage! is my five cents in defining a good fluid css framework. 
+				Every framework has its shortcomings – as has Centage! too – 
+				but it also solves some major issues in existing ones.</p>
+				<p>Reason for Centage! is purely practical. I started to redesign my own site and wanted to go for a fluid grid, mostly just for the challenge of it. At the same time I had made some tests with <a href="http://lesscss.org/">Less</a> and though it seemed pretty cool, it was still hard to develop. When <a href="http://github.com/cloudhead/less.js">less.js</a> came along, the pieces existed for putting together a next gen fluid framework.</p>
+				<p>None of the existing fluid frameworks worked as I wanted them to.  <a href="http://www.designinfluences.com/fluid960gs/">Fluid 960Grid</a> is an impressive achievement, but what if I want to start my grid from page edge? Or what about nested grids? Another wonderful undertaking is <a href="http://elasticss.com">Elastic</a>, but it's dependancy on javascript troubles me. I have my roots in print design and designing complex grid systems for newspapers. So I wanted the same grid into web as well. Especially nested, percentage width grids are a challenge that simply cannot be addressed with traditional css (afaik).</p>
+				<h4>My requirements for a grid system are:</h4>
+				<ol>
+					<li>It should work acceptably without javascript.</li>
+					<li>It should mimic print grids as accurately as possible.</li>
+					<li>Proportions of columns and gutters should be visually equal at any width.</li>
+					<li>It should add minimum extra markup.</li>
+					<li>No representational markup.</li>
+					<li>Should work on most browsers after IE6. IE6 users can expect trouble anyway.</li>
+					<li>It should be light + simple./li>
+				</ol>
+				<h4>
+				How to get there:</h4>
+				<ol>
+					<li>Only use javascript and CSS3 to beautify layout, rely on robust css.</li>
+					<li>Margins to columns are right. You should be able to decide not to use gutters.</li>
+					<li>Take full advantage of LESS calculation capabilities to deal with subgrids.</li>
+					<li>Only extra markup required are occasional ".last" -classes.</li>
+					<li>Put all presentational markup into CSS/Less.</li>
+					<li>Use LESS to enable more flexible, powerful and compact CSS.</li>				
+					<li>Only core stylesheet is necessary, extending by modularity.</li> 
+				</ol>
+				<h4>Known issues / limitations:</h4>
+				<ul>
+					<li>Centage! is currently in alpha release state and might have bugs. It's not fully tested with IE, so you might encounter problems</li>
+					<li>Overriding right margin of rightmost columns requires .last -style. Any ideas how to beat this limitation are welcome (tried with negative margin container, but that messed up the percentage calculations and using last-child doesn't recognize last item on multirow grids).</li>
+					<li>Subpixel rendering of different browsers cause small irregularities in grid. Although a  javascript-fix has been considered, irregularities are not <em>visually</em> very significant in real life layouts. Only browser that renders pixel-perfect is Firefox. </li>
+					<li>Opera works poorly supported because its horrible rendering. No decimal width percentages? Come on Opera, that's lame!</li>
+			</div>
+			
+			<div class="section" id="usage">
+				<h2>How to use</h2>
+				
+				<ol class="toc">
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#initialization">Initialization</a></li>
+					<li><a href="">Defining styles</a></li>
+				</ol>
+				
+				<h3><a id="installation">Installation</a></h3>
+				<p><strong>1.</strong> <a href="">Download Centage!</a> and copy to your working folder.</p>
+				<p><strong>2.</strong> Create a new document in your preferred text editor with the extension ".less". This will be your stylesheet. For convinience set syntax to CSS.</p>
+				<pre>&lt;link&nbsp;rel=&quot;<strong>stylesheet/less</strong>&quot;&nbsp;media=&quot;screen&quot;&nbsp;href=&quot;<strong>homepage_screen.less</strong>&quot;&nbsp;/&gt;</pre>
+				
+				<p><strong>3.</strong> Add newly created file to your document head as "stylesheet/less".	
+				</p>
+				<p><strong>4.</strong> Add less to your document head and call it.</p>
+					<pre>&lt;script&nbsp;src=&quot;<strong>http://lesscss.googlecode.com/files/less-1.0.35.min.js</strong>&quot;&gt;&lt;/script&gt;<br/>&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;charset=&quot;utf-8&quot;&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<strong>less.env&nbsp;=&nbsp;&quot;development&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;less.watch();</strong><br/>&lt;/script&gt;</pre>
+				
+				<p><strong>5.</strong> Put your page structure inside wrapper div (if you prefer other naming, feel free to modify centage_screen.less).</p>
+					<pre>&lt;body&gt;<br/>&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<strong>id=&quot;wrap</strong>&quot;&gt;Content&nbsp;here&lt;/div&gt;<br/>&lt;/body&gt;</pre>
+				
+				<p>That's it, now let's move on to fun part.</p>
+				<h3><a id="initialization">Initialization</a></h3>
+				<p>As mentioned, Centage is based on <a href="http://github.com/cloudhead/less.js">less.js,</a> a rewrite of less. Before diving into Centage! you should familiarize yourself with <a href="http://lesscss.org/docs">less language</a>. It's well-thought and very simple really. It'll take you only 10 minutes.</p>
+				<p><strong>1.</strong> Open centage_sceen.less and modify settings. Set number of columns on page, default font size and line height. Let's look at it step-by-step:
+				<p><strong>2.</strong> Define main grid count. You can use other grid divisions as well, but this sets the foundation for your styles.</p>
+				<pre>/*page&nbsp;grid&nbsp;columns*/<br/>@grid:<strong>12</strong>;<br/></pre>
+				<p><strong>3.</strong> Define default gutter width in percentages. Centage is a <em>fluid</em> grid, so all horizontal values are relative. Note that Centage is clever enough to remain this gutter width even in nested grids. Now isn't that something.</p>
+				<pre>/*space&nbsp;(gutter)&nbsp;between&nbsp;columns.*/<br/>@gut:<strong>1.5%</strong>;<br/>@gut_int:<strong>1.5</strong>;</pre>
+				<p>4. Set the page size. This sets the width of div#wrap. Width is set in ems as default to compensate text size changes, but feel free to use your preferred units.</p>
+				<pre>/*page&nbsp;size*/<br/>@max-width:<strong>110em</strong>;<br/>@min-width:<strong>66em</strong>;</pre>
+				<p>5. Set font and line height. The default lineheight also defines the baseline grid.</p>
+				<pre>/*typography,&nbsp;baseline&nbsp;grid*/<br/>@font:<strong>Arial,&nbsp;sans-serif</strong>;<br/><br/>@bodyfont:<strong>75%</strong>;&nbsp;/*set&nbsp;the&nbsp;body&nbsp;font&nbsp;size&nbsp;in&nbsp;percentages*/<br/>@fontpx:<strong>12</strong>;&nbsp;/*standard&nbsp;font&nbsp;size&nbsp;in&nbsp;pixels,&nbsp;needed&nbsp;for&nbsp;calculations*/<br/>@fontpxem:<strong>12em</strong>;&nbsp;/*this&nbsp;is&nbsp;needed&nbsp;for&nbsp;calculations*/<br/><br/>/*standard&nbsp;line&nbsp;height&nbsp;*/<br/>@line:<strong>1.5em</strong>;<br/><br/>@linepx:<strong>18</strong>;&nbsp;/*standard&nbsp;line&nbsp;height&nbsp;in&nbsp;pixels,&nbsp;please. Calculate&nbsp;it&nbsp;like&nbsp;this:&nbsp;@fontpx&nbsp;*&nbsp;@line.&nbsp;*/<br/></pre>
+				<h3>Defining styles</h3>
+				<h4>Setting up columns</h4>
+				<p>The columns are easy to set up using two "functions" in less: <strong>.col()</strong> and <strong>.sub-col()</strong></p>
+				<p>.col([column count], [vertical padding]*, [horizontal padding]*)</p>
+				<pre>/*&nbsp;=&nbsp;3&nbsp;columns&nbsp;wide,&nbsp;one&nbsp;line&nbsp;vertical&nbsp;padding, horizontal&nbsp;padding&nbsp;as&nbsp;wide&nbsp;as&nbsp;gutter&nbsp;*/&nbsp;<br/>#sidebar&nbsp;{<br/>	<strong>.col(3,&nbsp;@line,&nbsp;@gut);}</strong>&nbsp;<br/><br/><br/>/*&nbsp;Nested&nbsp;column,&nbsp;4&nbsp;columns&nbsp;inside&nbsp;8&nbsp;column&nbsp;container. Paddings&nbsp;can&nbsp;include&nbsp;calculations.&nbsp;*/<br/>.section&nbsp;{<br/>	<strong>.sub-col(8,4,@line,&nbsp;2*@gut);}</strong></pre>
+			</div>
+			
+		</div>
+		<div id="sidebar">
+			<a class="download" href="./">Download Centage! <small>(alpha)</small></a>
+			
+			<div id="author">
+				<h4>Author</h4>
+				<p>Centage! has been developed by <a href="http://www.kameli.net/jussi">Jussi Jokinen</a> from <a href="http://www.monsoongraphics.com">Monsoon Graphics</a>.</p>
+				<h4>Licence</h4>
+				<p>Centage! is licenced under <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>. In other words it's free. The author has no responsibility of even remotest kind of any damage / injury / lost sleep you might encounter.</p>
+				<h4>Participate</h4>
+				<p>You are welcome to participate in development or fork your own copy from <a href="http://github.com/jokjus/centage">GitHub</a>.</p>			
+			</div>
+
+		</div>
+	</div>
+</div>
