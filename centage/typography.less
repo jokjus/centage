@@ -1,3 +1,18 @@
+/* This file is part of Centage!.
+* Copyright (C) Jussi Jokinen <jussijokinen@iki.fi>.
+* Centage! is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Centage! is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Centage!.  If not, see <http://www.gnu.org/licenses/>. */
+
 body{
 	font-family: 'Helvetica Neue', Arial, sans-serif;}
 	
@@ -5,19 +20,31 @@ h1,h2,h3,h4 {
 	font-weight: bold;}
 	
 h1 {
-	font-size: 5em;
-	line-height: 1.2;
-	margin-bottom: .3em;}
+	@font:5em;
+	font-size: @font;
+	line-height: @line/@font*4;
+	margin-bottom: @line/@font;}
 
 h2 {
-	font-size: 3em;
-	line-height: 1;
-	margin-bottom: .5em;}
+	@font:3em;
+	font-size: @font;
+	line-height: @line/@font*2;
+	margin-bottom: (@line/@font);
+	margin-top: (@line/@font*2);}
 	
 h3 {
-	font-size: 1.5em;
-	line-height: 1;
-	margin-bottom: 1em;}
+	@font:1.5em;
+	font-size:@font;
+	line-height: @line/@font;
+	margin-bottom: @line/@font;
+	margin-top:@line/@font;}
 
 p {
-	margin-bottom: 1.5em;}
+	@font:1em;
+	margin-bottom: @line/@font;}
+
+strong {
+	font-weight: bold;}
+
+em {
+	font-style: italic;}

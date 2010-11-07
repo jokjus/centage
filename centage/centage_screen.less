@@ -1,3 +1,18 @@
+/* This file is part of Centage!.
+* Copyright (C) Jussi Jokinen <jussijokinen@iki.fi>.
+* Centage! is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Centage! is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Centage!.  If not, see <http://www.gnu.org/licenses/>. */
+
 
 /* THANK YOU, THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
 /* ------------------------------------------------------------------- */
@@ -13,6 +28,8 @@
 /*the true leading = line height - font size*/
 @leading:@line - @fontpxem; 
 
+@bodyfont:100% * (@fontpx/16); /*set the body font size in percentages*/
+@line:@linepx/@fontpx * 1em;
 /* -------------------------------------------------------------------- */
 
 @fontpxem:@fontpx * 1em; /*this is needed for calculations*/
@@ -169,7 +186,7 @@ body {
 	z-index:100;
 	min-width:@min-width;
 	width:100%;
-	height:2500px;}
+	height:5000px;}
 	
 #grid {
 		height:100%;
@@ -178,10 +195,16 @@ body {
 			height:100%;
 			.col(1);
 			background:transparent url(img/grid_fluid.png) repeat-y 0 0;
+			@line:@linepx * 1px;
+			-o-background-size: 500px @line;
+			-khtml-background-size: 500px @line;
+			-webkit-background-size: 500px @line;			
+			-moz-background-size: 500px @line;			
+			background-size: 500px @line;			
 			position:relative;
 			}
 		
-		#grid_col13 {
+		.lastcol {
 			.last(right);}			
 			
 		.right_grid_colborder {
@@ -208,8 +231,8 @@ body {
 #grid_toggle{
 	position:fixed;
 	z-index: 1000;
-	top:0;
-	right: 0;}
+	top:@line;
+	right: @gut;}
 /* @end */
 
 
