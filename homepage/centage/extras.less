@@ -1,0 +1,44 @@
+/* This file is part of Centage!.
+* Copyright (C) Jussi Jokinen <jussijokinen@iki.fi>.
+* Centage! is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* Centage! is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with Centage!.  If not, see <http://www.gnu.org/licenses/>. */
+
+.h-navi {
+	margin:0;
+	list-style-type:none;
+	overflow:hidden;
+
+	li {
+		float:left;
+		width:auto;
+		display:block;}
+}
+
+.rounded(@roundness:@gap) {
+	-webkit-border-radius:@roundness;
+	-moz-border-radius:@roundness;
+	border-radius:@roundness;}
+
+.shadow(@sh_x:3px, @sh_y:3px, @sh_rad:3px, @sh_col:#888){
+		box-shadow: @sh_x @sh_y @sh_rad @sh_col;
+		-webkit-box-shadow:@sh_x @sh_y @sh_rad @sh_col;
+		-moz-box-shadow:@sh_x @sh_y @sh_rad @sh_col;}
+
+.text-shadow(@shadow_col:#fff) {
+		text-shadow:0 1px 0 @shadow_col;}
+
+.opacity(@op:100){
+		filter:alpha(opacity=@op);
+		-moz-opacity:@op/100;
+		-khtml-opacity:@op/100;
+		opacity:@op/100;}	
