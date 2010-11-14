@@ -5,7 +5,7 @@
 /* -------------------------- */
 
 #header {
-	overflow:hidden;
+	.clear;
 
 	#navi{
 		.h-navi;
@@ -16,7 +16,7 @@
 }
 
 #page {
-	overflow: hidden;
+	.clear;
 }
 
 #sidebar {
@@ -58,12 +58,13 @@
 }
 
 .container{
-	overflow:hidden;
+	.clear;
+	margin-bottom: @line;
 
 	div {
 		background-color: #ccc;
 		height: 3*@line;
-		margin-bottom: @line;
+		
 		
 		&:last-child {
 			.last();}
@@ -86,15 +87,17 @@
 #col12 {margin-bottom:@line*2;}
 	
 #no_gut_test {
-	overflow: hidden;
+	.clear;
 	margin-bottom: @line*3;
 	
 	.nogut_container div{
 		background-color: #dedede;
 		height: @line*4;
 		
-		&:nth-child(odd){
-			background-color:#efefef;}
+		&:nth-child(odd){background-color:#efefef;}
+		
+		/* for IE, added class with jQuery */
+		&.odd{background-color:#efefef;}
 	}
 	
 	#nogut_4 div {.col-full(3, @line, @gut);}
@@ -105,7 +108,7 @@
 }
 
 #halfgut_test {
-	overflow: hidden;
+	.clear;
 	margin-bottom: 2*@line;
 	margin-top: @line;
 	
@@ -118,5 +121,12 @@
 			background-color:#efefef;}
 	
 		&:first-child, &:last-child{.col-nogut-first-last(3, @line, @gut);}
+		
+		/* for IE, added class with jQuery */
+		&.first, &.last{.col-nogut-first-last(3, @line, @gut);}
+		&.odd{background-color:#efefef;}
+		
 	}
+	
 }
+

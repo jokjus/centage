@@ -4,31 +4,31 @@ a img{border:none;}
 body{font-family:Arial,sans-serif;font-size:75%;line-height:1.5em;}
 .mod{float:left;overflow:hidden;}
 .last{margin-right:0 !important;}
+.clear{overflow:hidden;display:inline-block;zoom:1;display:block;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-#grid_wrapper,#grid_no_gut_wrapper{position:absolute;left:0;top:0;z-index:100;min-width:40em;width:100%;height:2500px;}
+#grid_wrapper,#grid_no_gut_wrapper{position:absolute;left:0;top:0;z-index:100;min-width:40em;width:100%;height:5000px;}
 #grid{height:100%;}#grid .grid_col{height:100%;width:6.958333333333333%;*width:6.858333333333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;background:transparent url(img/grid_fluid.png) repeat-y 0 0;-o-background-size:500px 18px;-khtml-background-size:500px 18px;-webkit-background-size:500px 18px;-moz-background-size:500px 18px;background-size:500px 18px;position:relative;}
 #grid .lastcol{margin-right:0 !important;float:right !important;}
 #grid .right_grid_colborder{position:absolute;right:0;height:100%;background:transparent url(img/grid_fluid.png) repeat-y 0 0;background-position-right:-1px;width:1px;}
 #grid_no_gut{height:100%;}#grid_no_gut .center{height:100%;width:1.5%;margin-left:6.958333333333333%;float:left;background:transparent url(img/grid_center.png) repeat-y 50% 0;position:relative;}
-#grid_toggle{position:fixed;z-index:1000;top:0;right:0;}
+#grid_toggle{position:fixed;*position:absolute;z-index:1000;top:1.5em;right:1.5%;}
 #wrap,#grid,#grid_no_gut{max-width:110em;min-width:40em;margin:0 auto;overflow:hidden;padding:0 3%;}
 body{font-family:'Helvetica Neue',Arial,sans-serif;}
 h1,h2,h3,h4{font-weight:bold;}
 h1{font-size:5em;line-height:1.2em;margin-bottom:0.3em;}
-h2{font-size:3em;line-height:1em;margin-bottom:0.5em;margin-top:0.5em;}
+h2{font-size:3em;line-height:1em;margin-bottom:0.5em;margin-top:1em;}
 h3{font-size:1.5em;line-height:1em;margin-bottom:1em;margin-top:1em;}
-h4{margin-bottom:1.5em;}
 p{margin-bottom:1.5em;}
 strong{font-weight:bold;}
 em{font-style:italic;}
-.h-navi{margin:0;list-style-type:none;overflow:hidden;}.h-navi li{float:left;width:auto;display:block;}
-#header{overflow:hidden;}#header #navi{margin:0;list-style-type:none;overflow:hidden;}#header #navi li{float:left;width:auto;display:block;}
+.h-navi{margin:0;list-style-type:none;overflow:hidden;display:inline-block;zoom:1;display:block;}.h-navi li{float:left;width:auto;display:block;}
+#header{overflow:hidden;display:inline-block;zoom:1;display:block;}#header #navi{margin:0;list-style-type:none;overflow:hidden;display:inline-block;zoom:1;display:block;}#header #navi li{float:left;width:auto;display:block;}
 #header #navi li{margin-right:1.5%;}
-#page{overflow:hidden;}
-#sidebar{width:32.33333333333333%;*width:32.23333333333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;margin-right:0 !important;float:right !important;}#sidebar .img_container{margin-bottom:1.5em;width:73.84020618556703%;*width:73.74020618556703%;float:left;overflow:hidden;margin-right:4.63917525773196%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;margin-right:0 !important;float:right !important;}#sidebar .img_container img{width:100%;}
+#page{overflow:hidden;display:inline-block;zoom:1;display:block;}
+#sidebar{width:32.33333333333333%;*width:32.23333333333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;margin-right:0 !important;float:right !important;}#sidebar .img_container{margin-bottom:1.5em;width:73.84020618556703%;*width:72.84020618556703%;float:left;overflow:hidden;margin-right:4.63917525773196%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;margin-right:0 !important;float:right !important;}#sidebar .img_container img{width:100%;}
 @media only screen and (max-width: 2500px){.img_container{height:12em;}}@media only screen and (max-width: 1400px){.img_container{height:10.5em;}}@media only screen and (max-width: 1000px){.img_container{height:9em;}}
-#content{width:66.16666666666666%;*width:66.06666666666666%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}#content .caption{background-color:#eee;width:45.86649874055416%;*width:45.766498740554155%;float:left;overflow:hidden;margin-right:2.267002518891688%;padding-top:1.5em;padding-right:1.5%;padding-bottom:1.5em;padding-left:1.5%;margin-bottom:1.5em;}
-.container{overflow:hidden;}.container div{background-color:#ccc;height:4.5em;margin-bottom:1.5em;}.container div:last-child{margin-right:0 !important;float:left !important;margin-right:0 !important;}
+#content{width:66.16666666666666%;*width:66.06666666666666%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}#content .caption{background-color:#eee;width:45.86649874055416%;*width:44.86649874055416%;float:left;overflow:hidden;margin-right:2.267002518891688%;padding-top:1.5em;padding-right:1.5%;padding-bottom:1.5em;padding-left:1.5%;margin-bottom:1.5em;}
+.container{overflow:hidden;display:inline-block;zoom:1;display:block;margin-bottom:1.5em;}.container div{background-color:#ccc;height:4.5em;}.container div:last-child{margin-right:0 !important;float:left !important;margin-right:0 !important;}
 #col2 div{width:49.25%;*width:49.15%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}
 #col3 div{width:32.33333333333333%;*width:32.23333333333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}
 #col4 div{width:23.875%;*width:23.775%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}
@@ -41,10 +41,13 @@ em{font-style:italic;}
 #col11 div{width:7.727195833333333%;*width:7.627195833333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}
 #col12 div{width:6.958333333333333%;*width:6.858333333333333%;float:left;overflow:hidden;margin-right:1.5%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;}
 #col12{margin-bottom:3em;}
-#no_gut_test{overflow:hidden;margin-bottom:4.5em;}#no_gut_test .nogut_container div{background-color:#dedede;height:6em;}#no_gut_test .nogut_container div:nth-child(odd){background-color:#efefef;}
+#no_gut_test{overflow:hidden;display:inline-block;zoom:1;display:block;margin-bottom:4.5em;}#no_gut_test .nogut_container div{background-color:#dedede;height:6em;}#no_gut_test .nogut_container div:nth-child(odd){background-color:#efefef;}
+#no_gut_test .nogut_container div.odd{background-color:#efefef;}
 #no_gut_test #nogut_4 div{width:22%;*width:21.9%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
 #no_gut_test #nogut_5 div{width:17%;*width:16.9%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
 #no_gut_test #nogut_6 div{width:13.666666666666668%;*width:13.566666666666666%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
 #no_gut_test #nogut_7 div{width:11.285833333333334%;*width:11.185833333333335%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
-#halfgut_test{overflow:hidden;margin-bottom:3em;margin-top:1.5em;}#halfgut_test div{width:22.375%;*width:22.275%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;height:4.5em;background-color:#dedede;}#halfgut_test div:nth-child(odd){background-color:#efefef;}
+#halfgut_test{overflow:hidden;display:inline-block;zoom:1;display:block;margin-bottom:3em;margin-top:1.5em;}#halfgut_test div{width:22.375%;*width:22.275%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;height:4.5em;background-color:#dedede;}#halfgut_test div:nth-child(odd){background-color:#efefef;}
 #halfgut_test div:first-child,#halfgut_test div:last-child{width:21.625%;*width:22.375% - 0.65%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
+#halfgut_test div.first,#halfgut_test div.last{width:21.625%;*width:22.375% - 0.65%;float:left;overflow:hidden;padding-top:1.5em;padding-bottom:1.5em;padding-left:1.5%;padding-right:1.5%;}
+#halfgut_test div.odd{background-color:#efefef;}

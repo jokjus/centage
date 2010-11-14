@@ -87,7 +87,7 @@ body {
 /*column inside parent container element */
 .sub-col(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
 	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - @pad_left - @pad_right);/* for IE */	
-	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 0.1% - @pad_left - @pad_right;
+	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 1% - @pad_left - @pad_right;
 	.mod;
 	margin-right:(100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * @gut;
 	padding-top:@pad_top;
@@ -163,6 +163,11 @@ body {
 
 
 /* @group other */
+.clear {
+	overflow:hidden;
+	display: inline-block;
+	zoom:1;
+    display: block;}
 
 .clearfix:after {
 	content:"."; 
@@ -220,16 +225,19 @@ body {
 		height:100%;
 	
 		.center {
+			display: inline-block;
 			height:100%;
 			width:@gut;
 			margin-left:@col1_gut;
+			*margin-left:@col1_gut - 0.1%;
 			float:left;
-			background:transparent url(img/grid_center.png) repeat-y 50% 0;
+			background:transparent url(img/grid_center.png) repeat-y 50% 50%;
 			position:relative;}
 	}	
 	
 #grid_toggle{
 	position:fixed;
+	*position: absolute;
 	z-index: 1000;
 	top:@line;
 	right: @gut;}
