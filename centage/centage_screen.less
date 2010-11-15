@@ -14,28 +14,31 @@
 * along with Centage!.  If not, see <http://www.gnu.org/licenses/>. */
 
 
-/* THANK YOU, THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
-/* ------------------------------------------------------------------- */
+/* THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
+/* -------------------------------------------------------- */
 /* gutterless column width */
 @col1:100% / @grid;
 
 /* column width when gutters are used */
 @col1_gut:(100% - @gut * (@grid - 1)) / @grid;
 
-/*column + gutter */
+/* column + gutter */
 @col1_plus_gut:@col1_gut + @gut;
 
-/*the true leading = line height - font size*/
+/* the true leading = line height - font size */
 @leading:@line - @fontpxem; 
 
-@bodyfont:100% * (@fontpx/16); /*set the body font size in percentages*/
-@line:@linepx/@fontpx * 1em;
-/* -------------------------------------------------------------------- */
+/* body font size in percentages */
+@bodyfont:100% * (@fontpx/16);
+
+/* line height in ems */ 
+@line:@linepx/@fontpx * 1em; 
 
 @fontpxem:@fontpx * 1em; /*this is needed for calculations*/
 @linepxem:@linepx * 1em; /*this is needed for calculations*/
 
 /* -------------------------------------------------------------------- */
+
 /* @group reset */
 /* You can use your preferred reset instead, this one is based on Blueprint CSS reset sheet */
 
@@ -66,13 +69,14 @@ body {
 
 /* @end */
 
+/* @group core styles */
 
 /* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
 .mod{
 	float:left;
 	overflow:hidden;}
 	
-/*main level column */	
+/*top level column */	
 .col(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
 	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
 	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - @pad_left - @pad_right;/* for IE */
@@ -84,7 +88,7 @@ body {
 	padding-left:@pad_left;	
 	}
 
-/*column inside parent container element */
+/*nested column inside parent container element */
 .sub-col(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
 	width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut)) - @pad_left - @pad_right);/* for IE */	
 	*width:((100 / (@parent_cols * @col1_gut + (@parent_cols * @gut - @gut))) * (@sub_cols * @col1_gut + (@sub_cols * @gut - @gut))) - 1% - @pad_left - @pad_right;
@@ -97,7 +101,7 @@ body {
 	}
 
 
-/*column based on full width of page*/
+/* column based on full width of page */
 .col-full(@col_count:1, @padd_v:0, @padd_h:0) {
 	width:((@col1 * @col_count) - (@padd_h * 2%));
 	*width:(@col1 * @col_count) - 0.1% - (@padd_h * 2%);/* for IE */
@@ -107,7 +111,7 @@ body {
 	padding-left:@padd_h;
 	padding-right:@padd_h;}
 
-/*columns without gutters*/
+/* columns without gutters = check demo page to understand difference with .col-full */
 .col-nogut(@col_count:1, @padd_v:0, @padd_h:0) {
 	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
 	width: @col-halfgut-width;
@@ -118,11 +122,11 @@ body {
 	padding-left:@padd_h;
 	padding-right:@padd_h;}
 
-/*columns without gutters, first and last of row*/
+/* columns without gutters, first and last of row */
 .col-nogut-first-last(@col_count:1, @padd_v:0, @padd_h:0) {
 	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
 	width: @col-halfgut-width - (0.5 * @gut);
-	*width:	@col-halfgut-width - - (0.5 * @gut) - 0.1%;/* for IE */
+	*width:	@col-halfgut-width - (0.5 * @gut) - 0.1%;/* for IE */
 	.mod; 
 	padding-top:@padd_v;
 	padding-bottom:@padd_v;
@@ -136,7 +140,7 @@ body {
 .margin-right(@margin_cols:1){
 	margin-right:@col1_plus_gut * @margin_cols;}
 
-/* helpers to keep layout in basline grid despite of borders used */
+/* helpers to keep layout in baseline and compenstate used borders */
 .margin-top(@lines:1, @borders_to_compensate:0){
 	margin-top: (@line*@lines) - @borders_to_compensate/@fontpxem;}
 
@@ -159,16 +163,18 @@ body {
 /* if called straight from xhtml */
 .last {
 	margin-right: 0 !important;}
-
+/* @end */
 
 
 /* @group other */
+/* default clear if content doesn't need to flow outside container */ 
 .clear {
 	overflow:hidden;
 	display: inline-block;
 	zoom:1;
     display: block;}
 
+/* alternative way to clear if your content needs to flow outside container */
 .clearfix:after {
 	content:"."; 
 	display: block; 
@@ -194,45 +200,45 @@ body {
 	height:5000px;}
 	
 #grid {
+	height:100%;
+	
+	.grid_col {
 		height:100%;
+		.col(1);
+		background:transparent url(img/grid_fluid.png) repeat-y 0 0;
+		@line:@linepx * 1px;
+		-o-background-size: 500px @line;
+		-khtml-background-size: 500px @line;
+		-webkit-background-size: 500px @line;			
+		-moz-background-size: 500px @line;			
+		background-size: 500px @line;			
+		position:relative;
+		}
+	
+	.lastcol {
+		.last(right);}			
 		
-		.grid_col {
-			height:100%;
-			.col(1);
-			background:transparent url(img/grid_fluid.png) repeat-y 0 0;
-			@line:@linepx * 1px;
-			-o-background-size: 500px @line;
-			-khtml-background-size: 500px @line;
-			-webkit-background-size: 500px @line;			
-			-moz-background-size: 500px @line;			
-			background-size: 500px @line;			
-			position:relative;
-			}
-		
-		.lastcol {
-			.last(right);}			
-			
-		.right_grid_colborder {
-			position:absolute;
-			right:0;
-			height:100%;
-			background:transparent url(img/grid_fluid.png) repeat-y 0 0;
-			background-position-right:-1px;
-			width:1px;}
+	.right_grid_colborder {
+		position:absolute;
+		right:0;
+		height:100%;
+		background:transparent url(img/grid_fluid.png) repeat-y 0 0;
+		background-position-right:-1px;
+		width:1px;}
 	}
 
 #grid_no_gut {
+	height:100%;
+
+	.center {
+		display: inline-block;
 		height:100%;
-	
-		.center {
-			display: inline-block;
-			height:100%;
-			width:@gut;
-			margin-left:@col1_gut;
-			*margin-left:@col1_gut - 0.1%;
-			float:left;
-			background:transparent url(img/grid_center.png) repeat-y 50% 50%;
-			position:relative;}
+		width:@gut;
+		margin-left:@col1_gut;
+		*margin-left:@col1_gut - 0.1%;
+		float:left;
+		background:transparent url(img/grid_center.png) repeat-y 50% 50%;
+		position:relative;}
 	}	
 	
 #grid_toggle{
@@ -248,9 +254,9 @@ body {
 #wrap,
 #grid,
 #grid_no_gut{
-		max-width: @max-width;
-		min-width: @min-width;
-		margin:0 auto; 
-		overflow: hidden; 
-		padding:0 @page-padding;
+	max-width: @max-width;
+	min-width: @min-width;
+	margin:0 auto; 
+	overflow: hidden; 
+	padding:0 @page-padding;
 	}
