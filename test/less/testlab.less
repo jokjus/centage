@@ -130,3 +130,15 @@
 	
 }
 
+#right_margin_test {
+	overflow: hidden;
+	
+	div {	
+		.col(5, @line, @gut, @line, @gut);
+		height: @line*5;
+		background-color: #dedede;	
+		.last(right);
+		.margin-right(2);
+	}
+}
+

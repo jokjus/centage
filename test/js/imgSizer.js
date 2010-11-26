@@ -1,7 +1,7 @@
 var imgSizer = {
 	Config : {
 		imgCache : []
-		,spacer : "/centage/homepage/js/spacer.gif"
+		,spacer : "http://centage.peruste.net/js/spacer.gif"
 	}
 
 	,collate : function(aScope) {

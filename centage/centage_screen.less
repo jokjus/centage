@@ -106,7 +106,7 @@ body {
 /*top level column */	
 .col(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
 	width:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right);
-	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.1% - @pad_left - @pad_right;/* for IE */
+	*width:(@col1_gut * @col_count) + (@gut * (@col_count - 1)) - 0.2% - @pad_left - @pad_right;/* for IE */
 	.mod; 
 	margin-right:@gut;
 	padding-top:@pad_top;
@@ -131,7 +131,7 @@ body {
 /* column based on full width of page */
 .col-full(@col_count:1, @padd_v:0, @padd_h:0) {
 	width:((@col1 * @col_count) - (@padd_h * 2%));
-	*width:(@col1 * @col_count) - 0.1% - (@padd_h * 2%);/* for IE */
+	*width:(@col1 * @col_count) - 0.2% - (@padd_h * 2%);/* for IE */
 	.mod; 
 	padding-top:@padd_v;
 	padding-bottom:@padd_v;
@@ -142,7 +142,7 @@ body {
 .col-nogut(@col_count:1, @padd_v:0, @padd_h:0) {
 	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
 	width: @col-halfgut-width;
-	*width:	@col-halfgut-width - 0.1%;/* for IE */
+	*width:	@col-halfgut-width - 0.2%;/* for IE */
 	.mod; 
 	padding-top:@padd_v;
 	padding-bottom:@padd_v;
@@ -153,7 +153,7 @@ body {
 .col-nogut-first-last(@col_count:1, @padd_v:0, @padd_h:0) {
 	@col-halfgut-width:((@col1_gut * @col_count) + (@gut * (@col_count)) - (@padd_h * 2%));
 	width: @col-halfgut-width - (0.5 * @gut);
-	*width:	@col-halfgut-width - (0.5 * @gut) - 0.1%;/* for IE */
+	*width:	@col-halfgut-width - (0.5 * @gut) - 0.2%;/* for IE */
 	.mod; 
 	padding-top:@padd_v;
 	padding-bottom:@padd_v;
@@ -165,7 +165,8 @@ body {
 	margin-left:@col1_plus_gut * @margin_cols;}
 
 .margin-right(@margin_cols:1){
-	margin-right:@col1_plus_gut * @margin_cols;}
+	margin-right:@col1_plus_gut * @margin_cols !important;
+	*display:inline;}/*double margin bug fix/*
 
 /* helpers to keep layout in baseline and compenstate used borders */
 .margin-top(@lines:1, @borders_to_compensate:0){

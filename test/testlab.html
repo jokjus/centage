@@ -232,27 +232,36 @@
 				<div>This is 1/7 container without gutter</div>
 			</div>
 		</div>
+		
+		<div id="right_margin_test">
+			<div>This should be 5 columns wide and have 2 column margin on right side.</div>
+		
+		</div>
 
 	</div>
 	<!-- wrapper end-->
 
-<!--[if lte IE 6]><script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
-<script type="text/javascript">
-DD_belatedPNG.fix('.grid_col');
-</script><![endif]--> 
+<!--[if lte IE 7]>
+	<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.grid_col');
+	</script>
+<![endif]--> 
 
-<!--[if lte IE 7]><script type="text/javascript" src="js/imgSizer.js"></script>
-<script type="text/javascript">
-window.onload = function() {
-	imgSizer.collate();
-}
-</script><![endif]-->
+<!--[if lte IE 7]>
+	<script type="text/javascript" src="js/imgSizer.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+		imgSizer.collate();
+		}
+	</script>
+<![endif]-->
 
 <!--[if lte IE 8]>
 <script type="text/javascript">
-$(".container div:last-child").addClass("last");
-$(".nogut_container div:nth-child(odd), #halfgut_test div:nth-child(odd)").addClass("odd");
-</script>
+	$(".container div:last-child").addClass("last");
+	$(".nogut_container div:nth-child(odd), #halfgut_test div:nth-child(odd)").addClass("odd");
+	</script>
 <![endif]-->
 
 	
