@@ -115,16 +115,6 @@ body {
 	padding-left:@pad_left;	
     position: relative;
 	}
-	
-.push(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
-	left:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) + @gut;
-	}
-	
-.pull(@col_count:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0) {
-	left:-((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) - @gut;
-	}
-
-
 
 /*nested column inside parent container element */
 .sub-col(@parent_cols:1, @sub_cols:1, @pad_top:0, @pad_right:0, @pad_bottom:0, @pad_left:0){
@@ -191,6 +181,12 @@ body {
 
 .padding-bottom(@lines:1, @borders_to_compensate:0){
 	padding-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
+	
+.push(@col_count:1) {
+	left:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) + @gut;}
+	
+.pull(@col_count:1) {
+	left:-((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) - @gut;}
 
 /* ------------------------------------------------------------------- */
 
