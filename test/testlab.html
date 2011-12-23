@@ -7,8 +7,8 @@
 <title>Centage – The Smart'n Fluid CSS Framework</title>
 
 <link rel="stylesheet/less" media="screen" href="less/testlab.less" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="http://lesscss.googlecode.com/files/less-1.0.35.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://lesscss.googlecode.com/files/less-1.1.5.min.js"></script>
 <!--<script src="js/css3-mediaqueries.js" type="text/javascript"></script>-->
 <script type="text/javascript" src="../centage/js/centage.js"></script>
 <script type="text/javascript">
@@ -237,6 +237,28 @@
 			<div>This should be 5 columns wide and have 2 column margin on right side.</div>
 		
 		</div>
+		
+  	<h2>Push & pull columns</h2>
+  	<div id="push-pull-test">
+  	  <div class="container">
+  	    <div class="pusher">Testing push</div>
+  	    <div class="puller">Testing pull</div>
+  	  </div>
+  	  <div class="container" id="push-pull-test-2">
+  	    <div></div>
+  	    <div></div>
+  	    <div></div>
+  	    <div id="pushthis">PUSH 1<br>--></div>
+  	    <div></div>
+  	    <div></div>
+  	    <div></div>
+  	    <div></div>
+  	    <div id="pullthis">PULL 2<br><----</div>
+  	    <div></div>
+  	    <div></div>
+  	    <div></div>
+  	  </div>
+  	</div>
 
 	</div>
 	<!-- wrapper end-->

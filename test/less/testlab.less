@@ -142,3 +142,35 @@
 	}
 }
 
+#push-pull-test {
+  .pusher {
+    .col(3, @line, @gut, @line, @gut);
+    .push(2);
+  }
+  
+  .puller {
+    .col(2, @line, @gut, @line, @gut);
+    .last(right);
+    .pull(2)
+  }
+  
+  #push-pull-test-2 {
+    div {
+      .col(1, @line/2, @gut/2, @line/2, @gut/2);
+      height: 3*@line;
+    }
+    
+  #pushthis {
+    .push(1);
+    background: red;
+    z-index: 10;
+  }
+  
+  #pullthis {
+    .pull(2);
+    background: green;
+  }
+  }
+  
+  
+}
