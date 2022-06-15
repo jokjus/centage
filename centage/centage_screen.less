@@ -183,10 +183,10 @@ body {
 	padding-bottom: (@line*@lines) - @borders_to_compensate/@fontpxem;}
 	
 .push(@col_count:1) {
-	left:((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) + @gut;}
+	left:((@col1_gut * @col_count) + (@gut * (@col_count - 1))) + @gut;}
 	
 .pull(@col_count:1) {
-	left:-((@col1_gut * @col_count) + (@gut * (@col_count - 1)) - @pad_left - @pad_right) - @gut;}
+	left:-((@col1_gut * @col_count) + (@gut * (@col_count - 1))) - @gut;}
 
 /* ------------------------------------------------------------------- */
 
